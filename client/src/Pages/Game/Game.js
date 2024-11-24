@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-import {
-  Container,
-  CardGrid,
-  Card,
-  TitleCard,
-  ResetButton,
-  StartButton,
-  Countdown,
-} from "./Game.styles";
+import { Container } from "./Game.styles";
+import { MemoryGame } from "../../Components";
 import {
   FaTree,
   FaGift,
@@ -36,7 +28,6 @@ const icons = [
 ];
 
 const Game = () => {
-  const { t } = useTranslation();
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -126,48 +117,23 @@ const Game = () => {
   };
 
   const resetGame = () => {
-    setTime(0);
-    setIsGameStarted(false);
+    initializeGame();
     startGame();
-  }
+  };
 
   return (
     <Container>
-      <TitleCard>
-        <h3>{t("game.title")}</h3>
-        <p>
-          {t("game.time")}
-          {time}s
-        </p>
-      </TitleCard>
-      {!isGameStarted && countdown === 0 && (
-        <StartButton onClick={startGame}>{t("game.start")}</StartButton>
-      )}
-      {countdown > 0 && (
-        <Countdown>
-          {t("game.countdown")}
-          {countdown}
-        </Countdown>
-      )}
-      {countdown === 0 && isGameStarted && (
-        <CardGrid>
-          {cards.map((card) => (
-            <Card
-              key={card.id}
-              flipped={
-                flippedCards.includes(card.id) || matchedCards.includes(card.id)
-              }
-              matched={matchedCards.includes(card.id)}
-              onClick={() => handleCardClick(card.id)}
-            >
-              {card.icon}
-            </Card>
-          ))}
-        </CardGrid>
-      )}
-      {countdown === 0 && isGameStarted && (
-        <ResetButton onClick={resetGame}>{t("game.reset")}</ResetButton>
-      )}
+      <MemoryGame
+        cards={cards}
+        flippedCards={flippedCards}
+        matchedCards={matchedCards}
+        time={time}
+        isGameStarted={isGameStarted}
+        countdown={countdown}
+        startGame={startGame}
+        resetGame={resetGame}
+        handleCardClick={handleCardClick}
+      />
     </Container>
   );
 };
