@@ -9,5 +9,10 @@
     "start": "Iniciar jogo",
     "reset": "Reiniciar jogo",
     "countdown": "Começando em: "
+  },
+  "ranking": {
+    "user": "Usuário",
+    "time": "Tempo",
+    "empty": "Ranking vazio ainda!"
   }
 }

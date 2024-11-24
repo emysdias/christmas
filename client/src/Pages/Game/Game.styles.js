@@ -42,10 +42,10 @@ export const TitleCard = styled.div`
   margin-top: 20px;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 20px;
   gap: 10px;
   border-radius: 10px;
-  max-width: 580px;
+  max-width: 560px;
   width: 100%;
   display: flex;
 `;
