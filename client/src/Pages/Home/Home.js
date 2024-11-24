@@ -7,9 +7,9 @@ import { toast } from "react-toastify";
 import api from "../../Services";
 
 const Home = () => {
+  const { t } = useTranslation();
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
-  const { t } = useTranslation();
 
   const handleInputChange = (event) => {
     const value = event.target.value;

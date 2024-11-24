@@ -64,8 +64,8 @@ const Game = () => {
       .map((icon) => ({
         id: Math.random(),
         icon,
-        flipped: false,
-        matched: false,
+        flipped: [],
+        matched: [],
       }))
       .sort(() => Math.random() - 0.5);
   };
