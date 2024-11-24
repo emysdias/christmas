@@ -23,7 +23,7 @@ const LoginForm = () => {
       <Image src={tree} alt="tree" />
       <Section>
         <SectionInput>
-          <Label for="username">{t("home.username")}</Label>
+          <Label htmlFor="username">{t("home.username")}</Label>
           <Input type="text" name="username" />
         </SectionInput>
         <Button onClick={handleClick}>

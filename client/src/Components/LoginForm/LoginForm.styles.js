@@ -6,8 +6,9 @@ export const Container = styled.div`
   display: flex;
   position: relative;
   width: 60%;
-  height: 50%;
+  height: 40%;
   border-radius: 10px;
+  min-height: 300px;
 `;
 
 export const Section = styled.div`
@@ -31,7 +32,7 @@ export const SectionInput = styled.div`
 
 export const Image = styled.img`
   position: relative;
-  top: 52%;
+  top: 50%;
   left: 25%;
   transform: translate(-50%, -50%);
   width: 20%;
@@ -50,7 +51,7 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  background-color: ${({ theme }) => theme.secundary};
+  background-color: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.white};
   padding: 10px 20px;
   position: absolute;
