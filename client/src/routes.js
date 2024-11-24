@@ -1,5 +1,5 @@
 import React from "react";
-import { Home } from "./Pages";
+import { Home, Game } from "./Pages";
 import { BrowserRouter, Routes, Route } from "react-router";
 
 const Router = () => {
@@ -7,6 +7,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Game />} />
       </Routes>
     </BrowserRouter>
   );

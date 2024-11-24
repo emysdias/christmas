@@ -2,5 +2,12 @@
   "home": {
     "play": "Jogar",
     "username": "Usuário"
+  },
+  "game": {
+    "title": "Jogo da Memória 🎄",
+    "time": "Tempo: ",
+    "start": "Iniciar jogo",
+    "reset": "Reiniciar jogo",
+    "countdown": "Começando em: "
   }
 }
