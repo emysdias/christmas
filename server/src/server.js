@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const dotenv = require("dotenv");
 const { connectToMongoDB } = require("./config/db");
 const ranking = require("./routes/ranking");
@@ -9,6 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 connectToMongoDB();
 
