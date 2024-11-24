@@ -1,6 +1,14 @@
+import Router from "./routes";
+import { ThemeProvider } from "styled-components";
+import { Colors } from "./Utils";
+
 function App() {
   return (
-  <div>oi</div>
+    <ThemeProvider theme={Colors}>
+      <section>
+        <Router />
+      </section>
+    </ThemeProvider>
   );
 }
 
