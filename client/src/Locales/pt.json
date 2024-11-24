@@ -1,7 +1,13 @@
 {
   "home": {
     "play": "Jogar",
-    "username": "Usuário"
+    "username": "Usuário",
+    "error": {
+      "userName": "O nome de usuário é obrigatório!"
+    },
+    "success": {
+      "login": "Login feito com sucesso!"
+    }
   },
   "game": {
     "title": "Jogo da Memória 🎄",

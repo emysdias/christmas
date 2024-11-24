@@ -11,12 +11,8 @@ import { CiPlay1 } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
 import tree from "../../Images/tree.png";
 
-const LoginForm = () => {
+const LoginForm = ({ username, onUsernameChange, onPlay }) => {
   const { t } = useTranslation();
-
-  const handleClick = () => {
-    alert("Oi");
-  };
 
   return (
     <Container>
@@ -24,9 +20,15 @@ const LoginForm = () => {
       <Section>
         <SectionInput>
           <Label htmlFor="username">{t("home.username")}</Label>
-          <Input type="text" name="username" />
+          <Input
+            type="text"
+            name="username"
+            maxLength={10}
+            value={username}
+            onChange={onUsernameChange}
+          />
         </SectionInput>
-        <Button onClick={handleClick}>
+        <Button onClick={onPlay}>
           {t("home.play")}
           <CiPlay1 />
         </Button>
