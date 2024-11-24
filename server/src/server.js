@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const { connectToMongoDB } = require("./config/db");
 const ranking = require("./routes/ranking");
+const user = require("./routes/user");
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 connectToMongoDB();
 
 app.use("/api", ranking);
+app.use("/api", user);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
