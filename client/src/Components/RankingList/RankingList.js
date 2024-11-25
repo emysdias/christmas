@@ -13,9 +13,9 @@ const RankingList = ({ rankingList }) => {
 
       {rankingList && rankingList.length > 0 ? (
         rankingList.map((player) => (
-          <ListItem key={player.id}>
+          <ListItem key={player._id}>
             <p>{player.name}</p>
-            <p>{player.time} segundos</p>
+            <p>{player.time} s</p>
           </ListItem>
         ))
       ) : (
