@@ -15,6 +15,7 @@ const GameModal = ({ isOpen, closeModal, modalMessage }) => {
       style={modalStyles}
       isOpen={isOpen}
       onRequestClose={closeModal}
+      appElement={document.getElementById("root")}
     >
       <ModalContent>
         <CloseButton onClick={closeModal}>
