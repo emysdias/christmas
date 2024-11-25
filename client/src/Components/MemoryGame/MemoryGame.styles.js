@@ -30,25 +30,25 @@ export const TitleCard = styled.div`
   justify-content: space-between;
   padding: 10px 20px;
   gap: 10px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   max-width: 560px;
   width: 100%;
   display: flex;
 `;
 
-export const ResetButton = styled.button`
-  display: block;
-  margin: 20px auto;
+export const ButtonCard = styled.div`
+  background-color: ${({ theme }) => theme.white};
+  align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: ${({ theme }) => theme.secondary};
-  color: ${({ theme }) => theme.white};
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  gap: 10px;
+  border-radius: 0 0 10px 10px;
+  max-width: 560px;
+  width: 100%;
+  display: flex;
 `;
 
-export const StartButton = styled.button`
+export const Button = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   background-color: ${({ theme }) => theme.secondary};
@@ -62,12 +62,12 @@ export const StartButton = styled.button`
 export const Countdown = styled.div`
   font-size: 16px;
   color: ${({ theme }) => theme.primary};
-  margin: 20px 0;
   background: ${({ theme }) => theme.white};
-  max-width: 600px;
+  max-width: 590px;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   display: flex;
   padding: 5px;
   min-height: 40px;

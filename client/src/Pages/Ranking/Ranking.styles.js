@@ -9,5 +9,6 @@ export const Container = styled.div`
   margin: auto;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   position: absolute;
 `;

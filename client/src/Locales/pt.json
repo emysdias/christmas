@@ -13,12 +13,14 @@
     "title": "Jogo da Memória 🎄",
     "time": "Tempo: ",
     "start": "Iniciar jogo",
+    "goToRanking": "Ir para ranking",
     "reset": "Reiniciar jogo",
     "countdown": "Começando em: "
   },
   "ranking": {
     "user": "Usuário",
     "time": "Tempo",
-    "empty": "Ranking vazio ainda!"
+    "empty": "Ranking vazio ainda!",
+    "backToGame": "Voltar para o jogo"
   }
 }

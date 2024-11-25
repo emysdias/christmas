@@ -3,11 +3,12 @@ import {
   CardGrid,
   Card,
   TitleCard,
-  ResetButton,
-  StartButton,
+  ButtonCard,
+  Button,
   Countdown,
 } from "./MemoryGame.styles";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const MemoryGame = ({
   cards,
@@ -21,6 +22,11 @@ const MemoryGame = ({
   handleCardClick,
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const goToRanking = () => {
+    navigate("/ranking");
+  };
 
   return (
     <>
@@ -32,7 +38,10 @@ const MemoryGame = ({
         </p>
       </TitleCard>
       {!isGameStarted && countdown === 0 && (
-        <StartButton onClick={startGame}>{t("game.start")}</StartButton>
+        <ButtonCard>
+          <Button onClick={startGame}>{t("game.start")}</Button>
+          <Button onClick={goToRanking}>{t("game.goToRanking")}</Button>
+        </ButtonCard>
       )}
       {countdown > 0 && (
         <Countdown>
@@ -57,7 +66,10 @@ const MemoryGame = ({
         </CardGrid>
       )}
       {countdown === 0 && isGameStarted && (
-        <ResetButton onClick={resetGame}>{t("game.reset")}</ResetButton>
+        <ButtonCard>
+          <Button onClick={resetGame}>{t("game.reset")}</Button>
+          <Button onClick={goToRanking}>{t("game.goToRanking")}</Button>
+        </ButtonCard>
       )}
     </>
   );
