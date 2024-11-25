@@ -9,7 +9,6 @@ const addPlayerTime = async (req, res) => {
 
   try {
     const collection = getCollection("ranking");
-
     const rankingCount = await collection.countDocuments();
 
     if (rankingCount >= 10) {
@@ -21,35 +20,35 @@ const addPlayerTime = async (req, res) => {
 
     const existingPlayer = await collection.findOne({ name });
 
-    if (existingPlayer) {
-      if (existingPlayer.time === time) {
-        return res.status(200).json({
-          message: "Você continua com o mesmo tempo. Continue tentando!",
-        });
-      }
-
-      if (time < existingPlayer.time) {
-        await collection.updateOne(
-          { name },
-          { $set: { time, date: new Date() } }
-        );
-
-        return res
-          .status(200)
-          .json({ message: "Você atualizou seu tempo. Continue jogando!" });
-      } else {
-        return res.status(200).json({
-          message:
-            "Seu tempo não foi atualizado, pois é menor do que o recorde atual.",
-        });
-      }
-    } else {
+    if (!existingPlayer) {
       await collection.insertOne({ name, time, date: new Date() });
-
       return res
         .status(201)
         .json({ message: "Você foi adicionado ao ranking, parabéns!!" });
     }
+
+    if (existingPlayer.time === time) {
+      return res
+        .status(200)
+        .json({
+          message: "Você continua com o mesmo tempo. Continue tentando!",
+        });
+    }
+
+    if (time < existingPlayer.time) {
+      await collection.updateOne(
+        { name },
+        { $set: { time, date: new Date() } }
+      );
+      return res
+        .status(200)
+        .json({ message: "Você atualizou seu tempo. Continue jogando!" });
+    }
+
+    return res.status(200).json({
+      message:
+        "Seu tempo não foi atualizado, pois é menor do que o recorde atual.",
+    });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: "Erro ao salvar tempo no ranking" });
